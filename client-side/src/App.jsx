@@ -15,8 +15,8 @@ function App() {
     <Routes>
       <Route path='/' Component={Home}/>
       <Route path='/add' Component={Add}/>
-      <Route path='/emp' Component={Employee}/>
-      <Route path='/edit' Component={Edit}/>
+      <Route path='/emp/:_id' Component={Employee}/>
+      <Route path='/edit/:_id' Component={Edit}/>
     </Routes>
     </BrowserRouter>
     </>

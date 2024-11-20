@@ -39,7 +39,7 @@ export async function updateEmployee(req,res) {
         const _id=req.params
         const{...emp}=req.body
         await userSchema.updateOne({_id},{$set:{...emp}}).then(()=>{
-            res.status(201).send("Successfully Updated");
+            res.status(201).send({msg:"Successfully Updated"});
         }).catch((error)=>{
             res.status(404).send(error);
         })    
@@ -52,7 +52,7 @@ export async function deleteEmployee(req,res) {
     try {
         const _id=req.params
         await userSchema.deleteOne({_id}).then(()=>{
-            res.status(200).send("Successfully Deleted");
+            res.status(200).send({msg:"Successfully Deleted"});
         }).catch((error)=>{
             res.status(404).send(error);
         })  
