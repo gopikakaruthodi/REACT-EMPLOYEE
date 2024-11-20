@@ -22,6 +22,7 @@ router.route("/displayemps").get(rh.displayEmployees)
 router.route("/displayemp/:_id").get(rh.displayEmployee)
 router.route("/updateemp/:_id").put(rh.updateEmployee)
 router.route("/deleteemp/:_id").delete(rh.deleteEmployee)
+
 // router.route("/image/:filename").get((req,res)=>{
 //     const{filename}=req.params
 //     return res.sendFile(path.resolve(`./uploads/${filename}`))

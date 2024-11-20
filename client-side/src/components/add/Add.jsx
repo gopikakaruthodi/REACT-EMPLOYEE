@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import './Add.css'
+import { useNavigate } from 'react-router-dom'
 
 const Add = () => {
+    const navigate=useNavigate();
     const[emp,setEmp]=useState({
         name:'',gender:'',age:'',email:'',place:'',phone:'',department:'',designation:'',profile:''
     })
@@ -12,7 +14,7 @@ const Add = () => {
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(emp)
         })
-        window.location.href='/'
+        // navigate('/');
 
 
         // console.log(res);

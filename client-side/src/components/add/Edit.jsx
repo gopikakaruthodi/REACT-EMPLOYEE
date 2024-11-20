@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './Add.css'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Edit = () => {
+    const navigate=useNavigate()
     const {_id}=useParams();
     const[emp,setEmp]=useState({})
     // console.log(_id);
@@ -28,7 +29,7 @@ const Edit = () => {
             if(res.status==201){
                 const data=await res.json()
                 alert(data.msg)
-                window.location.href='/'
+            navigate('/')
 
             }
             else{
@@ -89,7 +90,7 @@ const Edit = () => {
                 <tr>
                     <td>Age</td>
                     <td className="input">
-                        <input type="text" name="age" onChange={handleChange}  value={emp.age}  id="age"/>
+                        <input type="text" name="age" onChange={handleChange}  value={emp.age} id="age"/>
                     </td>
                 </tr>
                

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './Employee.css'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams,useNavigate } from 'react-router-dom'
 
 const Employee = () => {
+  const navigate=useNavigate()
     const {_id}=useParams();
     const[emp,setEmp]=useState({})
     // console.log(_id);
@@ -25,7 +26,7 @@ const Employee = () => {
                     const data=await res.json()
                     // console.log(data.msg);
                     alert(data.msg)
-                    window.location.href='/'
+                    navigate('/')
                 }
                 else{
                     alert("Something went wrong...!")
